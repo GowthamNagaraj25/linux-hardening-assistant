@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.py[cod]
+*.db
+venv/
+.venv/
+reports/*.sh
+reports/*.pdf
+*.log
+.DS_Store

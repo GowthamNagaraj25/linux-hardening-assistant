@@ -1,0 +1,230 @@
+/**
+ * Linux Hardening Assistant - Dashboard Styles
+ * Supports light and dark themes.
+ */
+
+:root {
+    --body-bg: #f0f2f5;
+    --card-bg: #ffffff;
+    --card-border: #dee2e6;
+    --text-primary: #212529;
+    --text-muted: #6c757d;
+    --score-bg: #e9ecef;
+    --score-color: #6c757d;
+    --fix-bg: #f8f9fa;
+    --audit-output-bg: #f1f3f5;
+    --chat-user-bg: #e7f1ff;
+    --chat-ai-bg: #f0f0f0;
+    --finding-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+    --body-bg: #1a1d21;
+    --card-bg: #252830;
+    --card-border: #3a3f4b;
+    --text-primary: #e9ecef;
+    --text-muted: #adb5bd;
+    --score-bg: #3a3f4b;
+    --fix-bg: #1e2128;
+    --audit-output-bg: #1e2128;
+    --chat-user-bg: #1a3a5c;
+    --chat-ai-bg: #2d3140;
+    --finding-bg: #2d3140;
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text-primary);
+}
+
+.card-header {
+    background-color: var(--card-bg);
+    border-bottom-color: var(--card-border);
+}
+
+.form-control,
+.form-select {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text-primary);
+}
+
+.form-control:focus {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.table {
+    color: var(--text-primary);
+    --bs-table-bg: var(--card-bg);
+    --bs-table-hover-bg: var(--fix-bg);
+}
+
+.accordion-item {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+.accordion-button {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--fix-bg);
+    color: var(--text-primary);
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-muted);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border-color: var(--card-border);
+}
+
+/* Demo Mode button */
+.btn-demo {
+    background: linear-gradient(135deg, #6610f2, #0d6efd);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-demo:hover {
+    background: linear-gradient(135deg, #520dc2, #0b5ed7);
+    color: #fff;
+}
+
+/* Security Score Ring */
+.score-ring {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(var(--score-color) 0deg, var(--score-bg) 0deg);
+    position: relative;
+    transition: background 0.6s ease;
+}
+
+.score-ring::before {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: var(--card-bg);
+}
+
+.score-value {
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-primary);
+}
+
+.score-label {
+    position: relative;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Fix Script Block */
+.fix-script {
+    background-color: var(--fix-bg);
+    border: 1px solid var(--card-border);
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 0.85rem;
+}
+
+.fix-script code {
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* Audit Output */
+.audit-output {
+    background-color: var(--audit-output-bg);
+    font-size: 0.8rem;
+    max-height: 200px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* Finding Cards */
+.finding-card {
+    background-color: var(--finding-bg);
+}
+
+.finding-card code {
+    background-color: var(--fix-bg);
+    font-size: 0.8rem;
+    word-break: break-all;
+}
+
+/* Chat Messages */
+.chat-messages {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.chat-msg {
+    font-size: 0.9rem;
+}
+
+.user-msg {
+    background-color: var(--chat-user-bg);
+}
+
+.ai-msg {
+    background-color: var(--chat-ai-bg);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .score-ring {
+        width: 120px;
+        height: 120px;
+    }
+
+    .score-ring::before {
+        width: 95px;
+        height: 95px;
+    }
+
+    .score-value {
+        font-size: 2rem;
+    }
+}
