@@ -27,4 +27,12 @@ The development of this project was supported by multiple AI-powered tools to im
 
 The AI tools were used as development assistants to enhance efficiency and provide guidance. All architectural decisions, integration, testing, validation, and final implementation were reviewed and completed by the development team.
 
+## Best Prompts Used
+"Build a Linux Hardening Assistant using React, Node.js, and SSH2."
+"Integrate Gemini AI with fallback local recommendations."
+"Create a Docker-based Ubuntu SSH environment for testing."
+"Generate Linux hardening test cases."
+"Prepare README and project documentation."
+
+
 **Note:** AI tools supported the development process but did not independently build the complete application.
